@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// 1. Tabel Utama untuk Dashboard & User Preview
+model hasil_prediksi_bert {
+  id           Int       @id @default(autoincrement())
+  video_id     String?   @unique @db.Text
+  video_url    String?   @db.Text
+  channel_name String?   @db.Text
+  published_at DateTime? @db.Timestamp(6)
+  view_count   BigInt?
+  like_count   BigInt?
+  title        String?   @db.Text
+  description  String?   @db.Text
+  clean_text   String?   @db.Text
+  word_count   Int?
+  token_count  Int?
+  topic_raw    String?   @db.Text
+  created_at   DateTime? @db.Timestamp(6)
+  
+  // Variabel Labeling & AI
+  label_id     Int?      // ID 1-5 (Database)
+  label_model  Int?      // ID 0-4 (Target AI)
+  label_source String?   @db.Text
+  
+  // Hasil Prediksi
+  pred_id      Int?      
+  true_id      Int?      
+  pred_label   String?   @db.Text
+  true_label   String?   @db.Text
+}
+
+// 2. Tabel Data Hasil Labeling
+model videos_labeled {
+  id           Int       @id @default(autoincrement())
+  video_id     String    @unique @db.VarChar(50)
+  video_url    String?
+  channel_name String?
+  published_at DateTime? @db.Timestamp(6)
+  view_count   BigInt?
+  like_count   BigInt?
+  title        String?
+  description  String?   @db.Text
+  clean_text   String?   @db.Text
+  word_count   Int?
+  token_count  Int?
+  topic_raw    String?   @db.VarChar(100)
+  created_at   DateTime? @db.Timestamp(6)
+  label_id     Int?
+  label_model  Int?
+  label_source String?   @db.VarChar(50)
+}
+
+// 3. Tabel Data Hasil Preprocessing
+model videos_preprocessed {
+  id           Int       @id @default(autoincrement())
+  video_id     String    @unique @db.VarChar(50)
+  video_url    String
+  channel_name String?
+  published_at DateTime? @db.Timestamp(6)
+  view_count   BigInt?
+  like_count   BigInt?
+  title        String?
+  description  String?   @db.Text
+  clean_text   String?   @db.Text
+  word_count   Int?
+  token_count  Int?
+  topic_raw    String?
+  created_at   DateTime? @default(now()) @db.Timestamp(6)
+}
+
+// 4. Tabel Data Mentah (Scraping)
+model videos_raw {
+  video_id     String    @id @db.VarChar(50)
+  title        String?
+  description  String?   @db.Text
+  channel_name String?
+  published_at DateTime? @db.Timestamp(6)
+  view_count   BigInt?
+  like_count   BigInt?
+  topic        String?
+  video_url    String?
+}
+
+// 5. Tabel Keyword & Master Topik
+model keyword_scraping {
+  id       Int     @id @default(autoincrement())
+  topic    String
+  keyword  String
+  label_id Int?
+}
