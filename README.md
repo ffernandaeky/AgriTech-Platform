@@ -1,66 +1,76 @@
-# Frontend PA YouTube Agriculture
+<div align="center">
 
-Antarmuka web untuk aplikasi **PA YouTube Agriculture**, sebuah proyek yang membantu pengguna mengakses dan mengolah informasi terkait konten YouTube bertema pertanian.
+# 🌾 YouTube Agriculture — Frontend
 
-## Teknologi
+### Menjelajahi wawasan pertanian dari konten YouTube, dalam satu antarmuka.
 
-Frontend ini dibangun menggunakan ekosistem JavaScript modern. Detail dependensi dan skrip yang tersedia dapat dilihat pada berkas `package.json`.
+Antarmuka web untuk mengakses, menelusuri, dan memahami data konten YouTube bertema pertanian.
 
-## Prasyarat
+![Next.js](https://img.shields.io/badge/Next.js-Frontend-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-UI-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Design-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
-Pastikan perangkat telah memiliki:
+</div>
 
-- [Node.js](https://nodejs.org/) versi LTS
-- npm (terpasang bersama Node.js)
+---
 
-## Instalasi
+## Tentang Proyek
 
-Jalankan perintah berikut dari folder `frontend`:
+**YouTube Agriculture** menghadirkan pengalaman dashboard yang memudahkan pengguna mengeksplorasi konten YouTube bertema pertanian. Antarmuka ini membantu menyajikan data, topik, dan hasil klasifikasi dalam tampilan yang ringkas, modern, dan mudah dipahami.
+
+> Pengetahuan pertanian yang lebih mudah ditemukan, dipelajari, dan dimanfaatkan.
+
+## ✨ Pengalaman yang Dihadirkan
+
+| | Fitur | Deskripsi |
+| :--: | --- | --- |
+| 📊 | **Dashboard informatif** | Menyajikan ringkasan data dalam tampilan visual yang mudah dipindai. |
+| 🎬 | **Eksplorasi video** | Membantu pengguna menelusuri konten YouTube bertema pertanian. |
+| 🔎 | **Pencarian topik** | Mendukung pengelolaan kata kunci dan topik yang relevan. |
+| 🧠 | **Wawasan berbasis AI** | Menampilkan hasil klasifikasi untuk membantu memahami kategori konten. |
+| 📱 | **Antarmuka responsif** | Dirancang agar nyaman digunakan pada beragam ukuran layar. |
+
+## 🛠️ Teknologi
+
+| Area | Teknologi |
+| --- | --- |
+| Framework | Next.js & React |
+| Bahasa | TypeScript |
+| Styling | Tailwind CSS |
+| Visualisasi | ApexCharts |
+| Pengelolaan data | Prisma & PostgreSQL |
+
+## 🚀 Menjalankan Secara Lokal
+
+Pastikan [Node.js](https://nodejs.org/) versi LTS dan npm telah terpasang, lalu jalankan dari folder `frontend`:
 
 ```bash
 npm install
-```
-
-## Menjalankan aplikasi
-
-Untuk menjalankan server pengembangan, gunakan:
-
-```bash
 npm run dev
 ```
 
-Buka alamat yang ditampilkan di terminal (umumnya `http://localhost:5173`) melalui browser.
-
-## Build produksi
-
-Untuk membuat berkas siap deploy:
+Untuk membuat build produksi:
 
 ```bash
 npm run build
 ```
 
-Hasil build akan dibuat pada folder output yang dikonfigurasi oleh proyek.
+## 🔐 Keamanan Data
 
-## Struktur proyek
+Repository publik ini tidak menyertakan file konfigurasi lokal, kredensial, token, maupun data internal. Gunakan variabel lingkungan atau secret manager untuk nilai yang sensitif.
 
-```text
-frontend/
-├── public/          # Aset statis
-├── src/             # Komponen, halaman, dan logika aplikasi
-├── package.json      # Dependensi dan skrip proyek
-└── README.md         # Dokumentasi frontend
-```
+Sebelum mengunggah perubahan, pastikan berikut ini tidak ikut terpublikasi:
 
-## Konfigurasi backend
+- File `.env` dan konfigurasi lokal lainnya.
+- API key, token, password, atau private key.
+- Data penelitian, data pengguna, dan data operasional internal.
 
-Pastikan layanan backend proyek dijalankan sebelum menggunakan fitur yang membutuhkan data dari server. Bila alamat API dapat dikonfigurasi, sesuaikan URL backend pada konfigurasi frontend sesuai lingkungan yang digunakan.
+## 📌 Status Proyek
 
-## Troubleshooting
+Proyek ini dikembangkan sebagai bagian dari penelitian analisis konten YouTube di bidang pertanian. Dokumentasi teknis dan panduan operasional rinci tersedia untuk anggota proyek yang berwenang.
 
-- Jika `npm install` gagal, pastikan Node.js menggunakan versi LTS terbaru.
-- Jika aplikasi tidak dapat mengambil data, periksa bahwa backend aktif dan alamat API sudah benar.
-- Jika port server sudah digunakan, jalankan aplikasi pada port lain sesuai opsi yang didukung skrip pengembangan proyek.
+<div align="center">
 
-## Lisensi
+<sub>Dibangun untuk mendekatkan teknologi, data, dan pengetahuan pertanian.</sub>
 
-Proyek ini dibuat untuk keperluan tugas akhir.
+</div>
