@@ -50,3 +50,8 @@ playwright-report/
 test-results/
 tmp/
 temp/
+
+# Local AI-agent instructions and archived source files
+claude.md
+agents.md
+src.rar
